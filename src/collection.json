@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "core": {
+      "description": "Creates a Core folder with base services.",
+      "factory": "./core/",
+      "schema": "./core/schema.json"
+    },
+    "service": {
+      "description": "A service class with the Http Base.",
+      "factory": "./service",
+      "schema": "./service/schema.json"
+    }
+  }
+}

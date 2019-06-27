@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "KahanuAngularServiceWithBase",
+    "title": "Service with Base Class",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The name of the service.",
+        "$default": {
+          "$source": "argv",
+          "index": 0
+        },
+        "x-prompt": "What name would you like to use for the service?"
+      },
+      "path": {
+        "type": "string",
+        "format": "path",
+        "description": "The path to create the service.",
+        "visible": false
+      },
+      "project": {
+        "type": "string",
+        "description": "The name of the project.",
+        "$default": {
+          "$source": "projectName"
+        }
+      },
+      "flat": {
+        "type": "boolean",
+        "default": false,
+        "description": "Flag to indicate if a directory is created."
+      },
+      "lintFix": {
+        "type": "boolean",
+        "default": false,
+        "description": "Specifies whether to apply lint fixes after generating the pipe."
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
