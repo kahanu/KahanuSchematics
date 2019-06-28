@@ -3,12 +3,13 @@
 This custom schematics create several bits of code to save time building components or services.
 
 ## Current Schematics - as of 6/27/2019
--- Core - this schematic creates an entire folder with folders for guards, interceptors, entity models, and base services.
--- Service - this schematic create a service class similar to the normal Angular service schematic, but adds my custom HttpBase class that contains the basic CRUD operations using the HttpClient.
++ Core - this schematic creates an entire folder with folders for guards, interceptors, entity models, and base services.
++ Service - this schematic create a service class similar to the normal Angular service schematic, but adds my custom HttpBase class that contains the basic CRUD operations using the HttpClient.
 
 ### Schematic Information
 
 *Core* Schematic
+
 | Parameter | Definition |
 |---|---|
 | project | (optional) the name of the project |
