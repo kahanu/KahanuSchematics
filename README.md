@@ -25,6 +25,29 @@ The Core Schematic contains many classes that create interceptors, models and se
 ng g kahanu:core <project> --workspaceHostProject=demo-one
 ```
 
+### Core Example 
+
+Here are examples of how to generate the schematics.
+
+*Core* in an Angular application
+
+This will place the Core folder inside the 'app' folder of the application.
+
+```javascript
+ng g kahanu:core
+```
+
+The ```project``` parameter is optional and will be the Angular project.
+
+
+*Core* in a Workspace
+
+To produce the Core schematics in a Library project called 'shared-libs', and update the app.module.ts file of the host Angular project (demo-two), this would be the command.
+
+```javascript
+ng g kahanu:core shared-libs --workspaceHostProject=demo-two
+```
+
 **Service** Schematic
 
 The service schematic generates a Service that depends on the Core Schematic being in place first.  It uses the HttpBase class that is produced in the Core schematic.
@@ -78,29 +101,6 @@ export class CustomerService extends HttpBase<Customer> {
 
 ```
 
-
-### Example 
-
-Here are examples of how to generate the schematics.
-
-*Core* in an Angular application
-
-This will place the Core folder inside the 'app' folder of the application.
-
-```javascript
-ng g kahanu:core
-```
-
-The ```project``` parameter is optional and will be the Angular project.
-
-
-*Core* in a Workspace
-
-To produce the Core schematics in a Library project called 'shared-libs', and update the app.module.ts file of the host Angular project (demo-two), this would be the command.
-
-```javascript
-ng g kahanu:core shared-libs --workspaceHostProject=demo-two
-```
 
 
  
