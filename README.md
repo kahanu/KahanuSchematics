@@ -2,6 +2,8 @@
 
 This custom schematics create several bits of code to save time building components or services.
 
+**IMPORTANT** - this schematic is still in Alpha and is NOT in NPM yet.  If you want to learn about how to build your own custom schematic, you can clone this project and see how these schematics are built.  I will update this documentation when this package has been added to NPM to be used in production.
+
 ## Current Schematics - as of 6/27/2019
 + Core - this schematic creates an entire folder with folders for guards, interceptors, entity models, and base services.
 + Service - this schematic create a service class similar to the normal Angular service schematic, but adds my custom HttpBase class that contains the basic CRUD operations using the HttpClient.
