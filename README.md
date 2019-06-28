@@ -1,28 +1,48 @@
-# Getting Started With Schematics
+# Custom Schematics
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+This custom schematics create several bits of code to save time building components or services.
 
-### Testing
+## Current Schematics - as of 6/27/2019
+-- Core - this schematic creates an entire folder with folders for guards, interceptors, entity models, and base services.
+-- Service - this schematic create a service class similar to the normal Angular service schematic, but adds my custom HttpBase class that contains the basic CRUD operations using the HttpClient.
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+### Schematic Information
 
-Check the documentation with
-```bash
-schematics --help
+*Core* Schematic
+| Parameter | Definition |
+|---|---|
+| project | (optional) the name of the project |
+| -- workspaceHostProject | (optional) the name of the project in a workspace where the code should be rendered |
+
+*Example* command line code
+
+```javascript
+ng g kahanu:core <project> --workspaceHostProject=demo-one
 ```
 
-### Unit Testing
+### Example 
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
+Here are examples of how to generate the schematics.
 
-### Publishing
+*Core* in an Angular application
 
-To publish, simply do:
+This will place the Core folder inside the 'app' folder of the application.
 
-```bash
-npm run build
-npm publish
+```javascript
+ng g kahanu:core
 ```
 
-That's it!
+The ```project``` parameter is optional and will be the Angular project.
+
+
+*Core* in a Workspace
+
+To produce the Core schematics in a Library project called 'shared-libs', and update the app.module.ts file of the host Angular project (demo-two), this would be the command.
+
+```javascript
+ng g kahanu:core shared-libs --workspaceHostProject=demo-two
+```
+
+
+ 
  
