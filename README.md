@@ -33,12 +33,24 @@ The service schematic generates a Service that depends on the Core Schematic bei
 | project | (optional) The name of the project to render the service. |
 | lintFix | (default: false) Specifies whether to apply lint fixes after generating the pipe. |
 
+*Example* command line code
+
+```javascript
+ng g kahanu:service <name> --<project> --lintFix=true
+```
+
 ### Sample Service Code
 
 If you want to create a **Customer** service in the '/customer' folder, you would enter this command:
 
 ```javascript
 ng g kahanu:service Customer
+```
+
+If you want to create a **Customer** service in the `Core/services` folder, you would enter this command:
+
+```javascript
+ng g kahanu:service core/services/Customer
 ```
 
 The service schematic produces a service class like below.
