@@ -8,7 +8,9 @@ This custom schematics create several bits of code to save time building compone
 
 ### Schematic Information
 
-*Core* Schematic
+**Core** Schematic
+
+The Core Schematic contains many classes that create interceptors, models and services for your RESTful Angular project.  It also contains an HttpBase class that implements the RESTful CRUD operations. This base class will be implemented by the generated Service classes.
 
 | Parameter | Definition |
 |---|---|
@@ -20,6 +22,17 @@ This custom schematics create several bits of code to save time building compone
 ```javascript
 ng g kahanu:core <project> --workspaceHostProject=demo-one
 ```
+
+**Service** Schematic
+
+The service schematic generates a Service that depends on the Core Schematic being in place first.  It uses the HttpBase class that is produced in the Core schematic.
+
+| Parameter | Definition |
+|---|---|
+| name | (optional) The name of the service (without the suffix `Service`) |
+| project | (optional) The name of the project to render the service. |
+| lintFix | (default: false) Specifies whether to apply lint fixes after generating the pipe. |
+
 
 ### Example 
 
