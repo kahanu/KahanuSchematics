@@ -33,6 +33,37 @@ The service schematic generates a Service that depends on the Core Schematic bei
 | project | (optional) The name of the project to render the service. |
 | lintFix | (default: false) Specifies whether to apply lint fixes after generating the pipe. |
 
+### Sample Service Code
+
+If you want to create a **Customer** service in the '/customer' folder, you would enter this command:
+
+```javascript
+ng g kahanu:service Customer
+```
+
+The service schematic produces a service class like below.
+
+```javascript
+import { Injectable } from '@angular/core';
+import { HttpBase } from '../http-base';
+import { HttpClient } from '@angular/common/http';
+import { ExceptionService } from './exception.service';
+import { Customer } from 'src/app/shared/entities/customer';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CustomerService extends HttpBase<Customer> {
+
+  constructor(protected http: HttpClient,
+    protected exceptionService: ExceptionService) {
+    super(http, exceptionService);
+  }
+
+}
+
+```
+
 
 ### Example 
 
