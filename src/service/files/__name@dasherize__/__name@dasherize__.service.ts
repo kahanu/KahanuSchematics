@@ -4,7 +4,7 @@ import { ExceptionService } from 'src/app/core/services/exception.service';
 import { HttpClient } from '@angular/common/http';
 import { Entity } from 'src/app/core/models/base';
 
-export interface <%= classify(name) %> extends Entity {}
+export class <%= classify(name) %> extends Entity {}
 
 @Injectable({
   providedIn: 'root'

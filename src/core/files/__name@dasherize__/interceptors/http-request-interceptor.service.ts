@@ -34,9 +34,10 @@ export class HttpRequestInterceptorService implements HttpInterceptor {
         
         return next.handle(deletedReq);
       default:
-        break;
-    }
-
-    return next.handle(req);
+        const clonedReq = req.clone({
+          headers: req.headers.set('Content-Type', 'application/json')
+        });
+        return next.handle(clonedReq);
+      }
   }
 }

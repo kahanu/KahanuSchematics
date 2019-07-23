@@ -10,7 +10,7 @@ export class ExceptionService {
   constructor() { }
 
   catchBadResponse: (errorResponse: any) => Observable<any> = (errorResponse: any) => {
-    const res = <HttpErrorResponse>errorResponse;
+    const res = errorResponse as HttpErrorResponse;
     if (res.status === 404) {
       return throwError('The web service was not found.');
     }
